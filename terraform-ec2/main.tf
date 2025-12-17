@@ -52,17 +52,7 @@ resource "aws_instance" "react_instance" {
   security_groups             = [aws_security_group.web_sg.name]
   key_name                    = "keypair"
 
-  user_data = <<-EOF
-              #!/bin/bash
-              sudo apt update
-              sudo apt install docker.io -y
-              sudo systemctl start docker
-              sudo systemctl enable docker
-              sudo usermod -aG docker ubuntu
-              newgrp docker
-              sudo systemctl restart docker
-              EOF
-
+  user_data = file("setup-ec2.sh")
   tags = {
     Name = "React-Project"
   }
