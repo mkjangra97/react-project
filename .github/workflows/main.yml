@@ -71,6 +71,9 @@ jobs:
 
     steps:
     
+       - name: Wait for EC2 Initialization
+         run: sleep 30  # Give EC2 user_data script time to finish
+
 #       Deploy to EC2 Instance
        - name: Deploy to EC2 Instance
          uses: appleboy/ssh-action@v1.2.4

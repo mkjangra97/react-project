@@ -54,12 +54,13 @@ resource "aws_instance" "react_instance" {
 
   user_data = <<-EOF
               #!/bin/bash
-              sudo apt-get update -y
-              sudo apt-get install docker.io -y
+              sudo apt update
+              sudo apt install docker.io -y
               sudo systemctl start docker
               sudo systemctl enable docker
-              sudo usermod -aG docker $USER
+              sudo usermod -aG docker ubuntu
               newgrp docker
+              sudo systemctl restart docker
               EOF
 
   tags = {
