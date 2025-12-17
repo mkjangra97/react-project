@@ -1,0 +1,13 @@
+/* App-specific styles */
+#root {
+  width: 100%;
+}
+
+.app-wrapper {
+  overflow-x: hidden;
+}
+
+/* Navbar if needed later, for now just global container tweaks */
+section {
+  padding: 4rem 0;
+}
