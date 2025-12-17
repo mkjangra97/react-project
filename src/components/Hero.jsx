@@ -5,7 +5,7 @@ const Hero = () => {
         <section className="hero container">
             <div className="hero-content">
                 <div className="badge">
-                    New Version Arrived !
+                   New Version 2.0 Released!
                 </div>
                 <h1 className="title">
                     Build faster with <span className="gradient-text">React & Vite</span>
